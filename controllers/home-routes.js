@@ -52,8 +52,8 @@ router.get("/feed", withAuth, async (req, res) => {
 
           {
             model: Comments,
-            attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-            include: { model: User, attributes: ["username", "user_image"] },
+            attributes: ["user_id", "recipe_id", "createdAt"],
+            include: { model: User, attributes: ["username"] },
           },
         ],
       })
@@ -84,7 +84,7 @@ router.get("/my-profile/", withAuth, async (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ["id", "recipe_title", "recipe_image", "recipe_likes"],
+          attributes: ["id", "recipe_title", "recipe_likes"],
         },
       ],
     });
@@ -114,7 +114,7 @@ router.get("/user/:id", withAuth, async (req, res) => {
       include: [
         {
           model: Recipe,
-          attributes: ["id", "recipe_title", "recipe_image", "recipe_likes"],
+          attributes: ["id", "recipe_title", "recipe_likes"],
         },
       ],
     });
@@ -139,39 +139,6 @@ router.get("/user/:id", withAuth, async (req, res) => {
 
 /* -----Single Recipe Page -----*/
 
-// router.get("/recipe/:id", withAuth, async (req, res) => {
-//   try {
-//     const { logged_in, user } = req.session;
-//     const recipeFromDb = await Recipe.findOne({
-//       where: { id: req.params.id },
-//       include: [
-//           {
-//             model: User,
-//             attributes: ["id", "username", "first_name", "last_name"],
-//           },
-
-//           {
-//             model: Comments,
-//             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-//             include: { model: User, attributes: ["username", "user_image"] },
-//           },
-//         ],
-//     });
-
-//   const recipe = recipeFromDb.get({ plain: true });
-
-//   const isMyRecipe = logged_in && user.id === recipe.user_id;
-
-//     return res.render("single-recipe", {
-//       ...recipe,
-//       logged_in: req.session.logged_in,
-//       isMyRecipe: isMyRecipe,
-//     });
-//   } catch (err) {
-//     console.log(err);
-//   }
-// });
-
 router.get("/recipe/:id", withAuth, async (req, res) => {
   // get logged in user info from session
   const { user_id } = req.session;
@@ -186,7 +153,7 @@ router.get("/recipe/:id", withAuth, async (req, res) => {
           {
             model: Comments,
             attributes: ["comment_desc", "user_id", "recipe_id", "createdAt"],
-            include: { model: User, attributes: ["username", "user_image"] },
+            include: { model: User, attributes: ["username"] },
           },
         ],
   });
@@ -234,23 +201,6 @@ router.get("/edit-recipe/:id", async (req, res) => {
   }
 });
 
-//-----------Search by particular user -----------
-// router.get("/user/:id/recipes", withAuth, async (req, res) => {
-//   try {
-//     const recipeCards = (
-//       await Recipe.findAll({
-//         where: { user_id: req.params.id },
-//         include: [{ model: User }, { model: Comments }],
-//       })
-//     ).map((recipeCard) => recipeCard.get({ plain: true }));
-//     res.render("searchresult", {
-//       recipeCards,
-//       logged_in: req.session.logged_in,
-//     });
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
 
 //-----------Filter by ingredients -----------
 router.get("/recipes/:tag", withAuth, async (req, res) => {

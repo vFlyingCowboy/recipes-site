@@ -12,9 +12,6 @@ const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 const sess = {
   secret: "Super secret secret",
-  cookie: {
-    maxAge: 1800000,
-  },
   resave: false,
   saveUninitialized: true,
   store: new SequelizeStore({
@@ -30,7 +27,7 @@ app.use("/uploads", express.static("uploads"));
 app.engine("handlebars", hbs.engine);
 app.set("view engine", "handlebars");
 app.use(routes);
-app.use("/uploads", express.static("./uploads"));
+// app.use("/uploads", express.static("./uploads"));
 
 sequelize.sync({ force: false }).then(() => {
   app.listen(PORT, () =>

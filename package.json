@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
+    "start:dev" : "nodemon server.js",
     "seed": "node seeds/index.js"
   },
   "repository": {
@@ -20,7 +21,7 @@
   },
   "homepage": "https://github.com/ViennaBorowska/Steps-Project-2#readme",
   "devDependencies": {
-    "nodemon": "^2.0.15"
+    "nodemon": "^2.0.22"
   },
   "dependencies": {
     "bcrypt": "^5.0.1",
@@ -32,6 +33,7 @@
     "handlebars": "^4.7.7",
     "multer": "^1.4.4",
     "mysql2": "^2.3.3",
-    "sequelize": "^6.16.1"
+    "sequelize": "^6.16.1",
+    "uuid": "^9.0.1"
   }
 }

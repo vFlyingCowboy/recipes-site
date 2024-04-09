@@ -14,7 +14,7 @@ User.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true,
-      autoIncrement: true,
+        autoIncrement: true
     },
     username: {
       type: DataTypes.STRING,
@@ -35,11 +35,6 @@ User.init(
     user_bio: {
       type: DataTypes.TEXT,
       allowNull: true,
-    },
-    user_image: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-      defaultValue: "default-profile.png",
     },
   },
   {

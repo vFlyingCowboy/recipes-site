@@ -5,9 +5,9 @@
   </section>
   <form id="myForm" name="myForm">
     <section class="add-recipe-form">
-      <p class="input-title">RECIPE IMAGE</p>
-      <input type="file" class="file-upload" id="myFile" name="recipe_image" />
-      <p class="input-title">RECIPE NAME</p>
+<!--      <p class="input-title">RECIPE IMAGE (THIS IS REQUIRED)</p>-->
+<!--      <input type="file" class="file-upload" id="myFile" name="recipe_image" required/>-->
+      <h3 class="input-title">RECIPE NAME</h3>
       <input
         type="text"
         class="add-recipe-name"
@@ -15,7 +15,7 @@
         placeholder="E.g. Salmon Pesto Pasta"
         name="recipe_title"
       />
-      <p class="input-title">TOTAL TIME</p>
+      <h3 class="input-title">TOTAL TIME</h3>
       <p class="sub-text">What is the total recipe time for both prep and
         cooking?</p>
       <div class="cooking-time-wrapper">
@@ -34,7 +34,7 @@
         />
         <label class="cooking-time-mins">minutes</label>
       </div>
-      <p class="input-title">PORTIONS</p>
+      <h3 class="input-title">Portions</h3>
       <p class="sub-text">How many people does the recipe serve?</p>
       <input
         type="number"
@@ -42,7 +42,7 @@
         id="add-recipe-serves"
         name="recipe_serves"
       />
-      <p class="input-title">SUMMARY</p>
+      <h3 class="input-title">SUMMARY</h3>
       <p class="sub-text">Give a brief overview of the recipe.</p>
       <textarea
         type="text"
@@ -51,18 +51,8 @@
         name="recipe_summary"
       ></textarea>
 
-      <p class="input-title">RECIPE JAM</p>
-      <p class="sub-text">Share a link to your favourite cook-along-song!.</p>
-      <input
-        type="text"
-        class="add-recipe-name"
-        id="add-recipe-jam"
-        placeholder="E.g. Youtube, Spotify link..."
-        name="recipe_jam"
-      />
-
       {{! --------------------------------------------------------------------- }}
-      <p class="input-title">ICONS</p>
+      <h3 class="input-title">Icons</h3>
       <p class="sub-text">Tick the boxes below to add the relevant icons to your
         recipe</p>
 
@@ -76,25 +66,8 @@
         Vegetarians.</p>
       <input type="checkbox" id="recipe_veg" name="recipe_veg" value="Veg" />
       <label for="recipe_veg">Vegetarian</label>
-
-      <p class="input-title">PESCATARIAN</p>
-      <p class="sub-text">Check the box if the recipe is suitable for
-        Pescatarians.</p>
-      <input type="checkbox" id="recipe_fish" name="recipe_fish" value="Fish" />
-      <label for="recipe_fish">Pescatarian</label>
-
-      <p class="input-title">SHELLFISH</p>
-      <p class="sub-text">Check the box if the recipe contains Shellfish.</p>
-      <input
-        class=""
-        type="checkbox"
-        id="recipe_shellfish"
-        name="recipe_shellfish"
-        value="Shellfish"
-      />
-      <label for="recipe_shellfish">Shellfish</label>
       {{! --------------------------------------------------------------------------- }}
-      <p class="input-title middle-border-update">RECIPE TAGS</p>
+      <h3 class="input-title middle-border-update">RECIPE TAGS</h3>
       <p class="sub-text">What are the main ingredients/characteristics of your
         recipe?
         <span class="recipe-feature-span">MAX 5</span></p>
@@ -351,7 +324,7 @@
         </ul>
 
       </div>
-      <p class="input-title">RECIPE CUISINE</p>
+      <h3 class="input-title">RECIPE CUISINE</h3>
       <p class="sub-text">What is the recipe cuisine?</p>
 
       <label for="recipe_cuisine">Choose a cuisine</label>
@@ -371,7 +344,7 @@
         <option name="recipe_cuisine" value="Middle Eastern">Middle Eastern</option>
       </select>
 
-      <p class="input-title">INGREDIENTS</p>
+      <h3 class="input-title">Ingredients</h3>
       <p class="sub-text">Remember to add the amount and unit. To add more
         ingredients, use the + button.</p>
       <div class="recipe-ingredients-container">
@@ -387,14 +360,14 @@
           class="fa fa-plus"
           aria-hidden="true"
         ></i></button>
-      <p class="input-title">METHOD</p>
+      <h3 class="input-title">Instructions</h3>
       <p class="sub-text">To add more steps, use the + button.</p>
       <div class="recipe-method-container">
         <textarea
           class="add-recipe-method-step"
           id="add-recipe-method-step"
           name="recipe_method"
-          placeholder="E.g. Step one: "
+          placeholder="E.g. Take out cooking pan "
         ></textarea>
       </div>
       <button class="add-method-step"><i

@@ -1,8 +1,8 @@
 <section class="single-recipe-container">
-  <img
-    class="single-recipe-image"
-    src="../../{{recipe_image}}"
-  />
+<!--  <img-->
+<!--    class="single-recipe-image"-->
+<!--    src="../../{{recipe_image}}"-->
+<!--  />-->
 
 
 
@@ -13,8 +13,8 @@
   </nav>
 
   <div class="single-recipe-title-container">
-    <h1 class="single-recipe-title">{{recipe_title}}</h1>
-    <h2 class="single-recipe-by">by</h2>
+    <h2 class="single-recipe-title">{{recipe_title}}</h2>
+    <h3 class="single-recipe-by">by</h3>
     <a class="single-recipe-author-link" href="/user/{{user_id}}"><h2
         class="single-recipe-author"
       >{{user.first_name}} {{user.last_name}}</h2></a>
@@ -22,27 +22,17 @@
   </div>
 
   <section class="single-recipe-details">
-    <div class="single-recipe-cooking-time"><h2
+    <div class="single-recipe-cooking-time"><h3
         class="recipe-detail-container"
       ><i class="fa-solid fa-clock single-clock"></i>Cooking time: {{#if recipe_cooking_time_hours}}{{recipe_cooking_time_hours}} hrs {{/if}}{{#if recipe_cooking_time_minutes}}{{recipe_cooking_time_minutes}}
-        mins{{/if}}</h2></div>
+        mins{{/if}}</h3></div>
     <div class="single-recipe-serves"><h2 class="recipe-detail-container"><i
           class="fa-solid fa-utensils single-clock"
         ></i>serves: {{recipe_serves}}</h2></div>
         
   </section>
-  {{#if recipe_jam}}
-  <section class="recipe-jam">
-   <h2 class="jam-title">{{user.first_name}}'s Kitchen Jam</h2>
-  <a class="recipe-jam-link" href={{recipe_jam}} target="_blank">
-          <button class="fa-solid fa-circle-play fa-xl"></button>
-         </a>
-          </section>
-          {{/if}}
-        
-  
   <section class="single-recipe-summary-container" id="summary-scroll">
-    <h2 class="single-recipe-subheader">Summary</h2>
+    <h3 class="single-recipe-subheader">Summary</h3>
     <p class="single-recipe-summary">"{{recipe_summary}}"</p>
   </section>
 
@@ -58,7 +48,7 @@
   </section>
 
   <section class="single-recipe-method-container" id="method-scroll">
-    <h2 class="single-recipe-subheader">Method</h2>
+    <h3 class="single-recipe-subheader">Instructions</h3>
     <div class="single-method-list-container">
       <ol class="single-recipe-method-list">
         {{#each recipe_method}}

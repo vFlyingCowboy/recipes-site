@@ -57,14 +57,12 @@ router.post("/add-recipe", upload, async (req, res) => {
       recipe_ingredients_tags: req.body.recipe_ingredients_tags,
       recipe_cuisine: req.body.recipe_cuisine,
       recipe_likes: 0,
-      recipe_image: req.file.path,
-      recipe_jam: req.body.recipe_jam,
       user_id: req.session.user_id,
     });
     res.status(200).json(newRecipe);
   } catch (err) {
     console.log(err);
-    res.sendStatus(500).send(err);
+    // res.sendStatus(500).send(err);
   }
 });
 
@@ -90,14 +88,14 @@ router.put("/update-recipe/:id", upload, async (req, res) => {
         recipe_summary: req.body.recipe_summary,
         recipe_ingredients: req.body.recipe_ingredients,
         recipe_method: req.body.recipe_method,
-        recipe_image: req.file.path,
+        // recipe_image: req.file.path,
       },
       { where: { id: req.params.id } }
     );
     res.status(200).json(updateRecipe);
   } catch (err) {
     console.log(err);
-    res.sendStatus(500).send(err);
+    // res.sendStatus(500).send(err);
   }
 });
 

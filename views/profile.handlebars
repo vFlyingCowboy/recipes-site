@@ -1,47 +1,36 @@
 <div class="profile__content">
     <section class="content__top">
         <div class="profile__info">
-          <div class="profile__left">
-            <img src="/uploads/{{user_image}}" alt="Profile Image" class="profile__image">
-          </div>
-          <div class="profile__middle">
-            <h1 class="profile-title">{{first_name}} {{last_name}}</h1>
-            <p class="profile-user-bio">{{user_bio}}</p>
-          </div>
-          <div class="profile__right">
-            {{#if sameUser}}
-            <a href="/edit-profile" class="btn__decoration"><button class="btn profile__update__btn"><i class="fa-solid fa-pen-to-square"></i>
-            Edit</button></a>
-            {{/if}}
-          </div>
-      </div>
+            <div class="profile__left">
+                <h1 class="profile-title">{{first_name}} {{last_name}}</h1>
+            </div>
+        </div>
     </section>
 
     <div class="content__middle">
-      <h3 class="my-recipes-title">My Recipes</h3>
-      <hr>
+        <h3 class="my-recipes-title">My Recipes</h3>
+        <hr>
     </div>
 
     <section class="content__bottom">
-      {{#each recipes as |recipe|}}
-         <div class="card">
-            <img class="card__image" src="/{{recipe_image}}" alt="">
-            <div class="card__content">
-                <p>
-                  {{recipe_title}}
-                </p>
+        {{#each recipes as |recipe|}}
+            <div class="card">
+                <div class="card__content">
+                    <p>
+                        {{recipe_title}}
+                    </p>
+                </div>
+                <div class="card__info">
+                    <div>
+                        <i class="fa-solid fa-heart"></i>{{ recipe_likes }}
+                    </div>
+                    <div>
+                        <a href="/recipe/{{recipe.id}}" class="card__link">View Recipe</a>
+                    </div>
+                </div>
             </div>
-            <div class="card__info">
-              <div>
-               <i class="fa-solid fa-heart"></i>{{ recipe_likes }}
-              </div>
-              <div>
-                <a href="/recipe/{{recipe.id}}" class="card__link">View Recipe</a>
-              </div>
-            </div>
-          </div>
-    
-      {{/each}}    
+
+        {{/each}}
     </section>
-  
-</section>
+</div>
+</div>

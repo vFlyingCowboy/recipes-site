@@ -40,10 +40,6 @@ Recipe.init(
       type: DataTypes.JSON,
       allowNull: false,
     },
-    recipe_image: {
-      type: DataTypes.TEXT,
-      allowNull: true,
-    },
     recipe_likes: {
       type: DataTypes.INTEGER,
       allowNull: true,
@@ -71,10 +67,6 @@ Recipe.init(
     },
     recipe_cuisine: {
       type: DataTypes.STRING,
-      allowNull: true,
-    },
-    recipe_jam: {
-      type: DataTypes.TEXT,
       allowNull: true,
     },
     user_id: {
